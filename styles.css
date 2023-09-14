@@ -1,0 +1,123 @@
+body {
+    background-color: #0D0303;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+.wrapper {
+    top: 50%;
+    left: 50%;
+    position: absolute;
+    perspective: 1500px;
+  }
+  
+  .box-area {
+    position: absolute;
+    animation-name: rotate;
+    animation-duration: 10s;
+    transform-style: preserve-3d;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+  }
+  
+  @keyframes rotate {
+    0% {
+      transform: rotate3d(0, 0, 0, 0);
+    }
+    100% {
+      transform: rotate3d(0, 1, 0, 360deg);
+    }
+  }
+  
+  .box {
+    width: 300px;
+    height: 300px;
+    position: absolute;
+    background-size: cover;
+    background-repeat: no-repeat;
+  }
+  
+  .front-box {
+    transform: translateX(-150px) translateY(-150px) translateZ(150px);
+  }
+  
+  .front-middle-box {
+    border: none;
+    transform: translateX(-150px) translateY(-150px) translateZ(0px);
+    background-image: url('./images/logo.png');
+  }
+  
+  .back-middle-box {
+    border: none;
+    transform: translateX(-150px) translateY(-150px) translateZ(0px)
+      rotateY(-180deg);
+    background-image: url('./images/logo.png');
+  }
+  
+  .back-box {
+    transform: translateX(-150px) translateY(-150px) translateZ(-150px);
+  }
+  
+  .right-box {
+    transform: translateY(-150px) rotateY(90deg);
+  }
+  
+  .left-box {
+    transform: translateY(-150px) translateX(-300px) rotateY(90deg);
+  }
+  
+  .bottom-box {
+    transform: translateX(-150px) rotateX(90deg);
+
+  }
+  
+  .top-box {
+    transform: translateX(-150px) translateY(-300px) rotateX(90deg);
+  }
+  
+  @media (min-width: 600px) {
+    .box {
+      width: 400px;
+      height: 400px;
+    }
+  
+    .front-box {
+      transform: translateX(-200px) translateY(-200px) translateZ(200px);
+    }
+  
+    .front-middle-box {
+      transform: translateX(-200px) translateY(-200px) translateZ(0px);
+    }
+  
+    .back-middle-box {
+      transform: translateX(-200px) translateY(-200px) translateZ(0px)
+        rotateY(-180deg);
+    }
+  
+    .back-box {
+      transform: translateX(-200px) translateY(-200px) translateZ(-200px);
+    }
+  
+    .right-box {
+      transform: translateY(-200px) rotateY(90deg);
+    }
+  
+    .left-box {
+      transform: translateY(-200px) translateX(-400px) rotateY(90deg);
+    }
+  
+    .bottom-box {
+      transform: translateX(-200px) rotateX(90deg);
+    }
+  
+    .top-box {
+      transform: translateX(-200px) translateY(-400px) rotateX(90deg);
+    }
+  }
+  
